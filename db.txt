@@ -1,0 +1,4 @@
+Name : nikita 
+Last_name : marykov 
+Age : 20 
+profession : programmer
