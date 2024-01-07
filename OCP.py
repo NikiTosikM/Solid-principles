@@ -30,7 +30,7 @@ class Calculation(ABC):
     def area_triangle(self):
         pass
     
-class Robot:  
+class Robot(Calculation):  
     def area(self, height, width):  
         return height * width  
     def perimeter(self, height, width):  
@@ -48,12 +48,8 @@ class Calculation(ABC):
     @abstractmethod
     def perimeter(self):
         pass
-
-    @abstractmethod
-    def area_triangle(self):
-        pass
     
-class Robot:    
+class Robot(Calculation):    
     def perimeter(self, height, width):  
         return (height + width) * 2   
     def area_triangle(self, side, height):  
