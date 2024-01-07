@@ -4,13 +4,6 @@ class Bank:
         self.__last_name = last_name
         self.__count_money = count_money
 
-    @property
-    def getUserAccount(self):
-        data = f'Name: {self.__name_user}\nLast name: {self.__last_name}Score: {self.__count_money}'
-
-        return data
-
-    @getUserAccount.setter
     def getUserAccount(self, *args):
         changedData = {}
         for name, value in zip(Bank.__dict__, *args):
@@ -20,3 +13,13 @@ class Bank:
         
         for name, value in changedData.items():
             print(f'{name} {value}', end='\n')
+
+
+# wrong decision ( You cannot override methods of a parent class )
+class User(Bank):
+    def getUserAccount(self, name_user= None, last_name= None, count_money= None):
+        self.__name_user = name_user
+        self.__last_name = last_name
+        self.__count_money = count_money
+        
+        
